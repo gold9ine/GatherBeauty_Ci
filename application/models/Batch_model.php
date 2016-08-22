@@ -1,0 +1,23 @@
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+class Batch_model extends MY_Model {
+    function __construct(){       
+        parent::__construct();
+    }
+
+    function gets(){
+        return $this->db->query("SELECT * FROM batch")->result();
+    }
+ 
+    function add($option){
+        $this->db->set('job_name', $option['job_name']);
+        $this->db->set('context', $option['context']);
+        $this->db->insert('batch');
+        $result = $this->db->insert_id();
+        return $result;
+    }
+ 
+    function delete($option){
+        return $this->db->delete('batch', array('id'=>$option['id']));   
+    }
+}
+?>

@@ -1,0 +1,959 @@
+/*------------------------------------------------------------------------------ user customize setting --*/
+div.webnote_container {
+	width:auto;
+	height:auto;
+	border-width:1px;
+	border-style:solid;
+	border-color:#d5d5d5;
+	padding:3px;
+	padding-top:0;
+	padding-bottom:0;
+	clear:both;
+	background-color:#ebebeb;
+	z-index:102;
+}
+div.webnote_file_attach_box {
+	clear:both;
+	margin-top:2px;
+	width:auto;
+	height:auto;
+	overflow:auto;
+	border-width:0;
+	border-style:solid;
+	border-color:#d5d5d5;
+	display:none;
+	text-align:left;
+}
+.webnote_file_attach_unit_basic {
+	width:45px;
+	height:45px;
+	padding:3px;
+	margin-right:2px;
+	border-width:1px;
+	border-style:solid;
+	border-color:#d9d9d9;
+	background-color:#f2f2f2;
+	font-size:11px;
+	text-align:left;
+}
+.webnote_file_attach_unit_over {
+	width:45px;
+	height:45px;
+	padding:3px;
+	margin-right:2px;
+	border-width:1px;
+	border-style:solid;
+	border-color:#d9d9d9;
+	background-color:#ffffff;
+	font-size:11px;
+	text-align:left;
+}
+.webnote_file_attach_unit_select {
+	width:45px;
+	height:45px;
+	padding:3px;
+	margin-right:2px;
+	border-width:1px;
+	border-style:solid;
+	border-color:blue;
+	background-color:#f2f2f2;
+	font-size:11px;
+	text-align:left;
+}
+.webnote_file_attach_unit_off {
+	width:45px;
+	height:45px;
+	padding:3px;
+	margin-top:3px;
+	margin-right:2px;
+	border-width:1px;
+	border-style:solid;
+	border-color:#d9d9d9;
+	background-color:#f2f2f2;
+	font-size:11px;
+	text-align:left;
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
+	filter: alpha(opacity=20);
+	-moz-opacity:0.2;
+	-khtml-opacity: 0.2;
+	opacity: 0.2;
+}
+div.webnote_resize_handle {
+	clear:both;
+	width:auto;
+	height:3px;
+	cursor:s-resize;
+}
+div.webnote_resize_handle_no {
+	clear:both;
+	width:auto;
+	height:3px;
+	cursor:default;
+}
+div.webnote {
+	font-size:13px;
+	display:block;
+	width:auto;
+	height:auto;
+	border-width:1px;
+	border-style:solid;
+	border-color:#d5d5d5;
+	padding:5px;
+	background-color:#FFFFFF;
+	overflow:auto;
+	clear:both;
+	white-space: -moz-pre-wrap;
+	white-space: -pre-wrap; 
+	white-space: -o-pre-wrap;
+	word-break:break-all;
+	text-align:left;
+
+}
+div.webnote:focus {
+    outline: none;
+}
+.webnote_toolbar_basic{
+	margin:0;
+	padding:2px;
+	width:16px;
+	height:16px;
+	border-width:1px;
+	border-color:#ebebeb;
+	border-style:solid;
+}
+.webnote_toolbar_on{
+	margin:0;
+	padding:2px;
+	width:16px;
+	height:16px;
+	border-width:1px;
+	border-color:#b2b2b2;
+	border-style:solid;
+	background-color:#cccccc;
+}
+.webnote_toolbar_down{
+	margin:0;
+	padding:2px;
+	width:16px;
+	height:16px;
+	border-width:1px;
+	border-color:#838383;
+	border-style:solid;
+	background-color:#a2a2a2;
+}
+.webnote_toolbar_off {
+	margin:0;
+	padding:2px;
+	width:16px;
+	height:16px;
+	border-width:1px;
+	border-color:#ebebeb;
+	border-style:solid;
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
+	filter: alpha(opacity=20);
+	-moz-opacity:0.2;
+	-khtml-opacity: 0.2;
+	opacity: 0.2;
+}
+div.webnote_popup {
+	display:none;
+	padding:3px;
+	padding-top:0;
+	font-size:12px;
+	width:auto;
+	height:auto;
+	background-color:#cccccc;
+	position: absolute;
+	border-width:1px;
+	border-style:solid;
+	border-color:#b2b2b2;
+	z-index:105;
+}
+div.webnote_popup_move {
+	padding:3px;
+	padding-top:0;
+	font-size:12px;
+	width:auto;
+	height:auto;
+	background-color:#cccccc;
+	position: absolute;
+	border-width:1px;
+	border-style:solid;
+	border-color:#b2b2b2;
+	z-index:105;
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+	filter: alpha(opacity=50);
+	-moz-opacity:0.5;
+	-khtml-opacity: 0.5;
+	filter: alpha(opacity=50);
+	opacity: 0.5;
+}
+div.webnote_popup_content {
+	width:auto;
+	height:auto;
+	clear:both;
+	padding:0;
+	background-color:#ebebeb;
+	border-width:0;
+	border-style:solid;
+	border-color:#b9b9b9;
+}
+div.webnote_toast {
+	display:none;
+	padding:8px;
+	font-size:12px;
+	width:auto;
+	height:auto;
+	background-color:#555555;
+        color:white;
+	position: absolute;
+	border-width:1px;
+	border-style:solid;
+	border-color:#ffffff;
+	z-index:106;
+}
+div.webnote_color_picker_popup {
+	display:none;
+	padding:3px;
+	padding-top:0;
+	font-size:12px;
+	width:auto;
+	height:auto;
+	background-color:#cccccc;
+	position: absolute;
+	border-width:1px;
+	border-style:solid;
+	border-color:#b2b2b2;
+	z-index:106;
+}
+
+
+div.webnote_select_box {
+	clear:both;
+	font-size:13px;
+	padding:3px;
+	border-width:1px;
+	border-style:solid;
+	border-color:#ebebeb;
+	cursor:default;
+}
+div.webnote_select_box_over {
+	clear:both;
+	font-size:13px;
+	padding:3px;
+	background-color:#d9d9d9;
+	border-width:1px;
+	border-style:solid;
+	border-color:#b2b2b2;
+	cursor:default;
+}
+div.webnote_select_box_down {
+	clear:both;
+	font-size:13px;
+	padding:3px;
+	background-color:#cccccc;	
+	border-width:1px;
+	border-style:solid;
+	border-color:#b2b2b2;
+	cursor:default;
+}
+
+.webnote_td_head {
+	width:80px;
+	padding:3px;
+	padding-right:5px;
+	color:gray;
+	font-weight:bold;
+	text-align:right;
+	background-color:#e5e5e5;
+}
+.webnote_td_body {
+	padding:3px;
+	color:gray;
+	text-align:left;
+	font-size:12px;
+	background-color:#f2f2f2;
+}
+.webnote_td_body0 {
+	padding:0;
+	margin:0;
+}
+.webnote_txtform {
+	border-width:1px;
+	border-color:#d9d9d9;
+	border-style:solid;
+	background-color:#f9f9f9;
+	color:gray;
+	font-size:12px;
+	height:16px;
+	float:left;
+}
+.webnote_fileform {
+	border-width:1px;
+	border-color:#d9d9d9;
+	border-style:solid;
+	background-color:#f9f9f9;
+	color:gray;
+	font-size:12px;
+	height:20px;
+	float:left;
+}
+.webnote_selform {
+	border-width:1px;
+	border-color:#d9d9d9;
+	border-style:solid;
+	background-color:#f9f9f9;
+	color:gray;
+	font-size:12px;
+	height:20px;
+	float:left;
+}
+.webnote_btn_basic {
+
+	margin-left:2px;
+
+	border-width:1px;
+	border-color:#e3e3e3;
+
+	border-bottom-width:1px;
+	border-right-width:1px;
+	border-bottom-color:#bfbfbf;
+	border-right-color:#bfbfbf;
+
+	border-style:solid;
+	background-color:#e3e3e3;
+	color:gray;
+	font-size:12px;
+	padding:2px;
+	padding-left:7px;
+	padding-right:7px;
+	height:20px;
+	float:left;
+}
+.webnote_btn_center {
+
+	margin-left:2px;
+
+	border-width:1px;
+	border-color:#e3e3e3;
+
+	border-bottom-width:1px;
+	border-right-width:1px;
+	border-bottom-color:#bfbfbf;
+	border-right-color:#bfbfbf;
+
+	border-style:solid;
+	background-color:#e3e3e3;
+	color:gray;
+	font-size:12px;
+	padding:2px;
+	padding-left:7px;
+	padding-right:7px;
+	height:20px;
+}
+.webnote_btn_center_red {
+
+	margin-left:2px;
+
+	border-width:1px;
+	border-color:#e3e3e3;
+
+	border-bottom-width:1px;
+	border-right-width:1px;
+	border-bottom-color:#bfbfbf;
+	border-right-color:#bfbfbf;
+
+	border-style:solid;
+	background-color:tomato;
+	color:white;
+	font-size:12px;
+	padding:2px;
+	padding-left:7px;
+	padding-right:7px;
+	height:20px;
+}
+div.webnote_popup_container_top {
+	clear:both;
+	width:auto;
+        height:auto;
+	padding:3px;
+	padding-bottom:5px;
+	border-width:1px;
+	border-style:solid;
+	border-color:#f9f9f9;
+	border-bottom-color:#a5a5a5;
+	border-right-color:#a5a5a5;
+}
+div.webnote_popup_container_bottom {
+	padding:0;
+	padding-top:3px;
+	clear:both;
+	width:auto;
+	background-color:#cccccc;
+	text-align:center;
+}
+/*------------------------------------------------------------------------------ color setting */
+/*form {
+	display:inline;
+}*/
+div.webnote p {
+	line-height:140%;
+	margin-top: 2px;
+	margin-bottom: 2px;
+	margin-left: 3px;
+	margin-right: 3px;
+	white-space: -moz-pre-wrap;
+	white-space: -pre-wrap; 
+	white-space: -o-pre-wrap;
+	word-break:break-all;	
+}
+
+
+div.webnote_toolbar_container {
+	width:auto;
+	height:auto;
+	padding:0;
+	padding:3px 0 3px 0; 
+	clear:both;
+	text-align:left;
+        line-height:0;
+}
+
+.webnote_specialchars_basic {	
+	float:left;
+	width:18px;
+	height:18px;
+	padding:2px;
+	font-size:15px;
+	text-align:center;
+	border-width:1px;
+	border-color:#ebebeb;
+	border-style:solid;
+	cursor:default;
+}
+.webnote_specialchars_on {	
+	float:left;
+	width:18px;
+	height:18px;
+	padding:2px;
+	font-size:15px;
+	text-align:center;
+	border-width:1px;
+	border-color:#d9d9d9;	
+	border-style:solid;
+	background-color:#ffffff;	
+	cursor:default;
+}
+
+.webnote_seperator {
+	padding:3px;
+	width:10px;
+	height:16px;
+	margin-right:1px;
+	margin-bottom:1px;
+}
+img {
+	border-width:0;
+}
+.webnote_edt_text_form {
+	display:none;
+	width:auto;
+	height:auto;
+	padding:5px;
+	background-color:#f9f9f9;
+	clear:both;
+	white-space: -moz-pre-wrap;
+	white-space: -pre-wrap; 
+	white-space: -o-pre-wrap;
+	word-break:break-all;
+	border-width:1px;
+	border-style:solid;
+	border-color:#c1dddd;
+
+}
+.webnote_edt_text_form:focus {
+    outline: none;
+}
+
+
+div.webnote_popup_title {
+	clear:both;
+	width:auto;
+	height:20px;
+	color:white;
+	font-weight:bold;
+	cursor:move;
+	font-size:12px;
+}
+div.webnote_popup_title_left {
+	float:left;
+	padding-top:3px;
+	width:auto;
+}
+div.webnote_popup_title_right {
+	float:right;
+	text-align:center;
+        padding-bottom:1px;
+	width:30px;
+	height:auto;
+	background-color:#e9071e;
+	cursor:default;
+}
+div.webnote_popup_title_right_on {
+	float:right;
+	text-align:center;
+        padding-bottom:1px;
+	width:30px;
+	height:auto;
+	background-color:#f94254;
+	cursor:default;
+}
+div.webnote_popup_title_right_down {
+	float:right;
+	text-align:center;
+        padding-bottom:1px;
+	width:30px;
+	height:auto;
+	background-color:#a30515;
+	cursor:default;
+}
+
+
+.webnote_pageadd_textform {
+	width:98.5%;
+	border-width:1px;
+	border-style:solid;
+	border-color:#d9d9d9;
+	resize: none; 
+}
+.webnote_pageadd_textform:focus {
+    outline: none;
+
+}
+
+div.webnote_image_previews {
+	clear:both;
+	display:none;
+	margin-top:3px;
+	padding:3px;
+	width:auto;
+	height:150px;
+	text-align:center;
+	overflow:auto;
+	border-width:0;
+	border-style:solid;
+	border-color:#d9d9d9;
+}
+div.webnote_input_img_btn {
+	display:none;
+	width:auto;
+	height:auto;
+	margin-top:2px;
+	text-align:center;
+	background-color:#CCCCCC;
+}
+
+
+/* textbox */
+.webnote_textbox_form {
+	margin:0;
+	font-size:12px;
+	height:12px;
+}
+div.webnote_textbox_previewbox {
+
+}
+
+div.webnote_over {
+	display:block;
+	width:auto;
+	height:auto;
+	border-width:1px;
+	border-style:solid;
+	border-color:#d1c23d;
+	padding:5px;
+	background-color:#ffffcc;
+	overflow:auto;
+	clear:both;
+	white-space: -moz-pre-wrap;
+	white-space: -pre-wrap; 
+	white-space: -o-pre-wrap;
+	word-break:break-all;
+}
+
+/* 블라인드 */
+div.webnote_blind5 {
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	background-color:#d9d9d9;
+	z-index:104;
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+	filter: alpha(opacity=50);
+	-moz-opacity:0.5;
+	-khtml-opacity: 0.5;
+	opacity: 0.5;
+
+}
+div.webnote_blind7 {
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	background-color:#d9d9d9;
+	z-index:104;
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+	filter: alpha(opacity=80);
+	-moz-opacity:0.8;
+	-khtml-opacity: 0.8;
+	opacity: 0.8;
+
+}
+div.webnote_fullscreen {
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	z-index:103;
+	padding:0;
+	clear:both;
+	background-color:#ebebeb;
+}
+div.webnote_fullscreen textarea {
+	resize: none; 	
+}
+div.webnote_container textarea {
+	resize: none; 	
+}
+
+/* source box */
+div.webnote_source_box {
+	clear:both;
+	font-family:verdana,arial,돋움;
+	width:auto;
+	background-color:#F3FBFC;
+	padding:5px;
+	margin:5px 2px 5px 2px;
+
+	border-width:0 2px 0 2px;
+	border-style:solid;
+	border-color:#cce6ff;
+
+}
+div.webnote_source_box ol {
+	list-style-type:decimal-leading-zero;
+	margin:0 5px 0 0;
+}
+div.webnote_source_box li {
+
+	color:black;
+	font-size:11px;
+	font-family:verdana,맑은 고딕,arial,돋움;
+	
+	margin:0;
+	line-height:1.5;
+
+	border-width:0 0 1px 0;
+	border-style:dotted;
+	border-color:#d9d9d9;
+}
+div.webnote_source_box li:hover { 
+    background-color:#FFFFFF; 
+}
+
+div.webnote_source_box li span {
+	display:inline;
+}
+
+div.webnote_loading_screen {
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	background-color:#d9d9d9;
+	z-index:105;
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+	filter: alpha(opacity=50);
+	-moz-opacity:0.5;
+	-khtml-opacity: 0.5;
+	opacity: 0.5;
+}
+div.webnote_loading_screen_img {
+	position:absolute;
+	top:50%;
+	left:50%;
+        text-align: center;
+        width:100px;
+        margin-left:-50px;
+        margin-top:-50px;
+        
+}
+
+
+/* image center new */
+div.webnote_imagecenter_container {
+	width:auto;
+	height:auto;
+	clear:both;
+}
+div.webnote_imagecenter_head {
+	clear:both;
+	width:auto;
+	height:25px;
+	padding:0;
+	background-color:#FFFFFF;	
+	margin-bottom:4px;
+}
+div.webnote_imagecenter_tree {
+	float:left;
+	width:160px;
+	height:350px;
+	background-color:#ffffff;
+}
+div.webnote_imagecenter_tree_data {
+	width:auto;
+        padding:3px;
+	height:344px;
+	overflow:auto;
+	background-color:#ffffff;
+}
+div.webnote_imagecenter_tree_form {
+	width:auto;
+        padding:3px;
+	height:20px;
+	margin-top:5px;
+	background-color:#f9f9f9;
+        border-top-width:1px;
+        border-top-color:#f2f2f2;
+        border-top-style:solid;        
+        
+}
+div.webnote_imagecenter_body {
+	margin-left:163px;
+	width:auto;
+	height:350px;
+	/*background-color:#FFFFFF;	*/
+}
+div.webnote_imagecenter_body_top {
+
+	width:auto;
+        padding:3px;
+	height:18px;
+	background-color:#ffffff;
+}
+div.webnote_imagecenter_body_ctl_form {
+        display:none;
+	width:auto;
+        padding:3px;
+	height:20px;
+        margin-top:3px;
+	background-color:#ffffff;
+}
+div.webnote_imagecenter_body_ctl_form_left {
+    width:auto;
+    float:left;
+}
+div.webnote_imagecenter_body_ctl_form_right {
+    width:50px;
+    float:right;
+    text-align:right;
+    color:black;
+    font-size:15px;
+    cursor:pointer;
+    padding-right:5px;
+    /*background-color: red;*/
+}
+div.webnote_imagecenter_body_data {
+	width:auto;
+	height:294px;
+        margin-top:3px;
+	overflow-x:auto;
+        overflow-y: scroll;
+	background-color:#ffffff;
+}
+div.webnote_imagecenter_body_data_fit {
+	width:auto;
+	height:265px;
+        margin-top:3px;
+	overflow-x:auto;
+        overflow-y: scroll;
+	background-color:#ffffff;
+}
+
+div.webnote_imagecenter_body_data_fover {
+	width:auto;
+	height:294px;
+        margin-top:3px;
+	overflow-x:auto;
+        overflow-y: scroll;
+	background-color:#ffffcc;
+}
+div.webnote_imagecenter_body_bottom {
+	margin-top:3px;
+	height:20px;
+        padding:3px;
+	background-color:#ffffff;
+}
+div.webnote_imagecenter_body_bottom_left {
+	float:left;
+}
+div.webnote_imagecenter_body_bottom_right {
+	float:right;
+}
+
+.webnote_imagecenter_tree_root_refresh_unit {
+    cursor:pointer;
+    margin-left:5px;
+}
+
+div.webnote_imagecenter_tree_folder_unit {
+	clear:both;
+	width:auto;
+	height:auto;
+	/*padding:2px;*/
+	/*margin-bottom:1px;*/
+        white-space:nowrap;
+}
+span.webnote_imagecenter_tree_icon_unit {
+	cursor: default;
+}
+span.webnote_imagecenter_tree_foldername_unit {
+        cursor: pointer;
+        padding-left: 3px;
+        padding-right: 3px;
+        white-space:nowrap;
+}
+folder.webnote_imagecenter_tree_foldername_unit_default {
+        height:18px;
+        padding:2px 3px 2px 2px;
+        font-size:11px;
+        font-weight:normal;
+}
+folder.webnote_imagecenter_tree_foldername_unit_select {
+        height:auto;
+        padding:2px 3px 2px 2px;
+        font-size:11px;
+        background-color: #ffcbb3;
+}
+
+div.webnote_imagecenter_image_unit {
+	float:left;
+	margin-left:5px;
+	margin-top:5px;
+	width:70px;
+	height:110px;
+	background-color:#f2f2f2;
+	padding:3px;
+	text-align:center;	
+	word-break:break-all;
+	overflow: hidden;
+	border-width:1px;
+	border-style:solid;
+	border-color:#e2e2e2;
+}
+div.webnote_imagecenter_image_unit_on {
+	float:left;
+	margin-left:5px;
+	margin-top:5px;
+	width:70px;
+	height:110px;
+	background-color:#d9d9d9;
+	padding:3px;
+	text-align:center;	
+	word-break:break-all;
+	overflow: hidden;
+	border-width:1px;
+	border-style:solid;
+	border-color:gray;
+}
+div.webnote_imagecenter_image_unit_select {
+	float:left;
+	margin-left:5px;
+	margin-top:5px;
+	width:70px;
+	height:110px;
+	background-color:#fff5ec;
+	padding:3px;
+	text-align:center;	
+	word-break:break-all;
+	overflow: hidden;
+	border-width:1px;
+	border-style:solid;
+	border-color:orange;
+}
+div.webnote_imagecenter_image_unit_cont {
+	width:70px;
+	height:auto;
+	/*white-space:nowrap;*/
+	word-break:break-all;
+	font-size:11px;
+}
+div.webnote_imagecenter_path_title {
+	width:auto;
+	height:auto;
+	word-break:break-all;
+	font-size:11px;
+       /* font-weight:bold; */
+        float:left;
+        padding:3px;
+
+}
+div.webnote_imagecenter_path_title_buttons {
+	width:100px;
+	height:auto;
+	font-size:11px;
+        font-weight:bold;
+        float:right;
+        color:red;
+        text-align:right;
+        cursor:pointer;
+}
+
+
+
+/* code highlight */
+.webnote_keyword1 {
+	color:#0033ff;
+}
+.webnote_keyword2 {
+	color:red;	
+}
+.webnote_keyword3 {
+	color:green;	
+}
+.webnote_keyword4 {
+	color:black;	
+}
+.webnote_keyword5 {
+	color:sandybrown;	
+}
+.webnote_keyword6 {
+	color:#ff6633;	
+}
+.webnote_keyword7 {
+	color:green;
+}
+
+.webnote_comments {
+	color:#c9c9c9;
+	font-style:italic;
+	font-size:11px;
+}
+#idx_toolbar_webnote_contents1_superscript,
+#idx_toolbar_webnote_contents1_subscript,
+#idx_toolbar_webnote_contents1_insertunorderedlist,
+#idx_toolbar_webnote_contents1_insertorderedlist,
+#idx_toolbar_webnote_contents1_insertfirstparagraph,
+#idx_toolbar_webnote_contents1_insertlastparagraph,
+#idx_toolbar_webnote_contents1_imagecenter,
+#idx_toolbar_webnote_contents1_sourcebox, 
+#idx_toolbar_webnote_contents1_increase, 
+#idx_toolbar_webnote_contents1_decrease, 
+#idx_toolbar_webnote_contents1_fullscreen{
+	display: none;
+}

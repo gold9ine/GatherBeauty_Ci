@@ -1,0 +1,451 @@
+@charset "utf-8";
+html,body{height: 100%;}
+body{margin : 0;padding: 0;overflow:auto;font-size: 14px;line-height: 1.42857143;color: #333;background-color: #fff;font-family: "Nanum Gothic", sans-serif;}
+a{text-decoration:none !important}
+img{border: 0px solid;}
+div{display: block;}
+.backWhite{background-color: white;}
+.zIndex1{z-index: 1;}
+.zIndex2{z-index: 2;}
+.zIndex3{z-index: 3;}
+.pointer{background: transparent;cursor: pointer;}
+.right{right: 0;}
+.middle{vertical-align: middle;}
+.honeydew{color: honeydew;}
+.lilac{color: #725D9E;}
+.violet{color: #494C9C;}
+.purple{color: #B6507D;}
+.relative{position: relative;}
+.wordBreak{word-break:break-all;}
+.width90{width: 90px;}
+.width180{width: 180px;}
+.width50p{width: 50%;}
+.width100p{width: 100%;}
+.height300{height: 300px;}
+.height400{height: 400px;}
+.height100p{height: 100%;}
+.paddingZero{padding: 0;}
+.marginZero, .navbar{margin: 0 auto;} /*center-block*/
+.borderZero{border: 0;}
+.padding5{padding: 5px;}
+.padding15{padding: 15px;}
+.margin10{margin: 10px;}
+.margin15{margin: 15px;}
+.textOverflow{overflow: hidden;white-space: nowrap;text-overflow: ellipsis;}
+.inlineBlock{display: inline-block;}
+.displayBlock{display: block;}
+.displayNone{display: none;}
+.displayTable{display: table;}
+.absolute{position: absolute;}
+/*.hidden{visibility: hidden;}*/
+/*.clear{clear: both;}  clearfix*/
+/*.fright{float: right;} pull-right*/
+/*.fleft{float: left;} pull-left*/
+/*text-center*/
+/*/////// hover effect*/
+.morph {-webkit-transition: all 0.5s ease;-moz-transition: all 0.5s ease;-o-transition: all 0.5s ease;-ms-transition: all 0.5s ease;transition: all 0.5s ease;}
+.morph:hover {border-radius: 50%;-webkit-transform: rotate(360deg);-moz-transform: rotate(360deg);-o-transform: rotate(360deg);-ms-transform: rotate(360deg);transform: rotate(360deg);}
+/*TILT*/
+.tilt {-webkit-transition: all 0.5s ease;-moz-transition: all 0.5s ease;-o-transition: all 0.5s ease;-ms-transition: all 0.5s ease;transition: all 0.5s ease;}
+.tilt:hover {-webkit-transform: rotate(-10deg);-moz-transform: rotate(-10deg);-o-transform: rotate(-10deg);-ms-transform: rotate(-10deg);transform: rotate(-10deg);}
+
+/* All Device */
+/*###############################header  start*/
+#topBanner-back{
+	height: 100px;
+	background: linear-gradient( to right, #494C9C, #B6507D);
+}
+#topBanner-extention-left{
+	width: 50%;
+	height: 100px;
+	position: absolute;
+	background-color: #494C9C;
+}
+#topBanner-extention-right{
+	width: 50%;
+	height: 100px;
+	position: absolute;
+	right: 0;
+	background-color: #B6507D;
+}
+#topBanner{
+	background:  url('/include/img/bg/banner.png') no-repeat center;
+	background-size: 100% 100%;
+	margin: 0 auto;
+	position: relative;
+	height: 100%;
+}
+#pageUpBtn{
+	display: none;
+}
+/*search*/
+.containerRowSearchbox{
+	margin: 12px 0px 0px 0px;
+}
+.choiceOption{
+	width: 50%;
+	text-align: right;
+	padding: 0px;
+}
+.search-div{
+	width: 49%;
+	padding: 0px;
+}
+.searchSelectDiv{
+	width: 48%
+}
+#select-category, #select-option{
+
+}
+/*user*/
+#login-form{
+	padding-bottom: 7px;
+}
+#loginEmail, #loginPassword, #find-pw-btn, #loginBtn{
+	width: 32%;
+	height: 30px;
+	font-size: 12px;
+}
+#join-btn{
+	width: 66%;
+	height: 30px;
+	font-size: 12px;
+}
+#flower-icon{
+	background-size: contain;
+	width: 15px;
+	height: auto;
+	margin-right: 5px;
+}
+#user-icon{
+	background-size: contain;
+	width: 25px;
+	height: auto;
+	margin-right: 10px;
+}
+#logout-button{
+	width: 15px;
+	margin: 0px 0px 7px 15px;
+}
+#userFlowerContainer{
+	padding: 0px 15px 0px 0px;
+}
+#userNameContainer{
+	padding: 15px 15px 0px 0px;
+	position: absolute;
+	right: 0;
+}
+.mainMenu{
+	width: 25%;
+	color: #6B6767;
+	border-radius: 0px;
+}
+.btn-group .btn+.btn{
+	margin-left: 0px;
+}
+.btn-default.active{
+	color: #A933A9;
+}
+.btn-default:hover{
+	color: #6B6767;
+}
+/*#############################header  end*/
+.nav-tabs > li > a {
+	width: 90px;
+	text-align: center;
+	background-image: url("/include/img/button/shopTabDefault.png");
+	background-repeat: no-repeat;
+	color: #707070;
+	margin: 0 auto
+}
+.nav-tabs > li.active > a {
+	width: 90px;
+	text-align: center;
+	background-image: url("/include/img/button/shopTabActive.png");
+	background-repeat: no-repeat;
+	margin: 0 auto
+}
+#shopTabBtn > li > a{
+	padding : 10px 0px 10px 0px;
+}
+.shopBlock{
+	background-color: rgba(221, 221, 221, 0.26);
+	border-radius: 5px;
+	padding: 10px;
+	border: 1px rgb(193, 193, 193) solid;
+	height: 200px;
+}
+.shopBlock > div > img{
+	width: 150px;
+	height: 150px;
+}
+.shopBlock > dl > span{
+	padding-left: 10px;
+	width: 20px;
+	height: 20px;
+}
+.shopBlockInfo{
+	float: right;
+	width: 100%;
+	padding: 5px;
+}
+#shopRankName{
+	margin-top: 0px;
+}
+#shopRankName > strong{
+	padding-bottom: 10px;
+}
+.shopTabGroup{
+	margin-top: 10px;
+}
+.glyphicon-star{
+	color: #FF4500;
+}
+.glyphicon-star-empty{
+	color: #A9A9A9;
+}
+.favoriteBox{
+	position: absolute;
+	right: 0;
+	top: 160px;
+}
+.infoBoxStyle{
+	padding: 5px;
+	margin: 0 auto;
+	background-color: rgb(248, 248, 248);
+	border: 1px solid #eee;
+	border-radius: 4px;
+}
+/*############################# map*/
+#roadviewControl {position:absolute;top:5px;left:5px;width:65px;height:24px;padding:2px;z-index: 1;background: #f7f7f7;border-radius: 4px;border: 1px solid #c8c8c8;box-shadow: 0px 1px #888;cursor: pointer;}
+#roadviewControl span {background: url(http://i1.daumcdn.net/localimg/localimages/07/mapapidoc/mapworker.png) no-repeat;  padding-left:23px;height:24px;font-size: 12px;display: inline-block;line-height: 2;font-weight: bold;position: absolute;top: -1px;}
+#roadviewControl.active {background: #ccc;box-shadow: 0px 1px #5F616D;border: 1px solid #7F818A;}
+#roadviewControl.active span {background: url(http://i1.daumcdn.net/localimg/localimages/07/mapapidoc/mapworker_on.png) no-repeat;color: #4C4E57;}
+.mapBtn{
+	position: absolute;
+	text-align: center;
+	font-size: 12px;
+    font-weight: bold;
+	top: 5px;
+	left: 75px;
+	width: 80px;
+	height: 24px;
+	padding: 2px;
+	z-index: 1;
+	background: #f7f7f7;
+	border-radius: 4px;
+	border: 1px solid #c8c8c8;
+	box-shadow: 0px 1px #888;
+	cursor: pointer;
+}
+/* Mobile Device -width 768px below*/
+.middleArea, .container{
+	width: 360px;
+}
+#topBanner-back, #topBanner-extention-left, #topBanner-extention-right, #mDropdown-searchBtn{
+	display: none;
+}
+#topBanner-back-m{
+	background: linear-gradient( to right, #494C9C, #B6507D);
+	width: 100%;
+	height: 50px;
+}
+#topBanner-m{
+	height: 50px;
+	background: url('/include/img/bg/banner.png') no-repeat center;
+	background-size: cover;
+}
+/*#choiceOption-m{
+	width: 50%;
+}*/
+.search-container{
+	width: 360px;
+	height: 80px;
+	padding: 5px 5px 0px 5px;
+}
+.login-container{
+	width: 350px;
+	height: 80px;
+	padding: 6px 0px 0px 10px;
+}
+.button-container-m{
+	padding-top: 5px;
+	width: 50px;
+}
+.user-container-m{
+	width: 130px;
+	padding-top: 5px
+}
+#userFlowerContainer-m{
+	padding-top: 16px;
+	margin-left: 50px;
+	display: block;
+	position: absolute;
+	width: 110px;
+}
+#userFlowerA-m{
+	padding-top: 3px;
+}
+#userNameContainer-m{
+	width: 150px;
+	padding: 15px 10px 0px 0px;
+	margin-left: 160px;
+	display: block;
+	position: absolute;
+}
+/*###########m-banner-dropdown*/
+#topBanner-m-dropdown{
+	background-color: #966096;
+	width: 360px;
+	height: 80px;
+}
+#gbBtn-m, #userBtn-m, #searchBtn-m{
+	background-size: contain;
+	width: 50px;
+}
+/*shop*/
+.shopBlock > dl{
+	height: 150px;
+	padding-left: 8px;
+	width: 170px;
+}
+.dl-horizontal dt{
+	width: 100%;
+}
+.dl-horizontal dd{
+	padding-left: 5px;
+	margin-left: 0px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+.shopBtnGroup{
+	margin-top: 10px;
+}
+.shopInfoMainImg{
+	width: 330px;
+	height: 330px;
+}
+#shopInfoGroup > dl > dt{
+	font-size: initial;
+}
+#shopInfoGroup > dl > dd{
+	padding-bottom: 10px;
+}
+#editShopCategory{
+	width: 97px;
+}
+
+/* Tablet Device -width 980px below*/
+@media all and (min-width:768px) and (max-width:980px) {
+	.middleArea, .container{
+		width: 768px;
+	}
+	#topBanner-back-m, #gatherbeauty-theme{
+		display: none;
+	}
+	#topBanner-back, #topBanner-extention-left, #topBanner-extention-right{
+		display: block;
+	}
+	#gb-button-container{
+		display: inline-block;
+		width: 100px;
+		height: 100px;
+		padding: 20px 0px 0px 0px;
+	}
+	#gbBtn{
+		background-size: contain;
+		width: 100px;
+	}
+	.search-container{
+		width: 420px;
+		height: 100px;
+		padding-top: 20px;
+	}
+	.login-container{
+		width: 245px;
+		height: 100px;
+		padding: 15px 0px 0px 0px;
+	}
+	/*shop*/
+	.shopBlock > dl{
+		height: 150px;
+		width: 200px;
+		padding-left: 8px;
+	}
+	.dl-horizontal dt{
+		text-align: left;
+	}
+	.dl-horizontal dd{
+		padding: 0px 0px 0px 5px;
+		margin-left: 0px;
+	}
+	.shopBtnGroup{
+		float: right;
+		margin-top: 10px;
+	}
+	.shopInfoMainImg{
+		width: 350px;
+		height: 350px;
+	}
+}
+
+/* Desktop Device -width 980px exceed*/
+@media all and (min-width:980px) {
+	.middleArea, .container{
+		width: 980px;
+	}
+	#topBanner-back-m{
+		display: none;
+	}
+	#topBanner-back, #topBanner-extention-left, #topBanner-extention-right{
+		display: block;
+	}
+	#gatherbeauty-theme{
+		display: inline;
+	}
+	#gb-button-container{
+		padding: 10px 0px 0px 10px;
+		width: 245px;
+		height: 100px;
+	}
+	#gbBtn{
+		background-size: contain;
+		width: 120px;
+		height: 75px;
+	}
+	.search-container{
+		width: 490px;
+		height: 100px;
+		padding-top: 20px;
+	}
+	.login-container{
+		width: 245px;
+		height: 100px;
+		padding-top: 20px;
+		padding: 15px 0px 0px 0px;
+	}
+	/*shop*/
+	.shopBlock > dl{
+		height: 150px;
+		width: 305px;
+	}
+	.dl-horizontal dt{
+		width: 110px;
+		padding: 0px 0px 20px 0px;
+	}
+	.dl-horizontal dd{
+		padding-left: 120px;
+		margin-left: 0px;
+		overflow: initial;
+		white-space: initial;
+	}
+	.shopBtnGroup{
+		float: right;
+		margin-top: 10px;
+	}
+	.shopInfoMainImg{
+		width: 460px;
+		height: 460px;
+	}
+}
