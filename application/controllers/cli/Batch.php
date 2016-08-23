@@ -54,8 +54,7 @@ class Batch extends MY_Controller {
             // echo $this->email->print_debugger();
 
             echo "{$user->email}로 메일 전송을 성공 했습니다.\n";
-        }   
-
+        }
     }
 }
 ?>

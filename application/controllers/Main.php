@@ -4,6 +4,7 @@ class Main extends MY_Controller {
 		parent::__construct();   
 		$this->load->model('gb_model'); 
 	}
+	// 메인 호출
 	function index(){
 		$this->_header();
 		$this->_sidebar();
@@ -18,7 +19,7 @@ class Main extends MY_Controller {
         $this->load->view('/errors/404page',$data);
         // $this->_footer();
     }
-
+    // 기본 topic get
 	function get($id){
 		log_message('debug', 'get 호출');
 		$this->_header();
@@ -36,7 +37,7 @@ class Main extends MY_Controller {
 		log_message('debug', 'footer view 로딩');
 		$this->_footer();
 	}
-
+	// topic 삭제
 	function delete(){
 		$returnURL = $this->input->get('returnURL');
 		$topic_id = $this->input->post('topic_id');
@@ -50,7 +51,7 @@ class Main extends MY_Controller {
 		
 		redirect('/');
 	}
-	
+	// topic add
 	function add(){
 		// 로그인 필요
 		$this->_header();
@@ -79,7 +80,7 @@ class Main extends MY_Controller {
 		}
 		$this->_footer();
 	}
-
+	// ck editor 이미지 업로드
 	function upload_receive_from_ck(){
         // 사용자가 업로드 한 파일을 /static/user/ 디렉토리에 저장한다.
 		$config['upload_path'] = './uploads';
@@ -106,7 +107,7 @@ class Main extends MY_Controller {
 			echo "<script type='text/javascript'>window.parent.CKEDITOR.tools.callFunction('".$CKEditorFuncNum."', '".$url."', '전송에 성공 했습니다')</script>";         
 		}
 	}
-
+	
 	function upload_receive(){
 		// 사용자가 업로드 한 파일을 /static/user/ 디렉토리에 저장한다.
 		$config['upload_path'] = './uploads';
@@ -128,7 +129,7 @@ class Main extends MY_Controller {
 			var_dump($data);
 		}
 	}
-
+	
 	function upload_form(){
 		$this->_header();
 		$this->_sidebar();

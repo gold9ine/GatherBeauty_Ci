@@ -552,11 +552,6 @@ $config['rewrite_short_tags'] = FALSE;
 */
 $config['proxy_ips'] = '';
 
-// $config['authentication'] = array(
-//             'id'=>'gold9ine',
-//             'password'=>'9'
-//             );
-
 $config['dev_recieve_email'] = 'comesbeauty@gmail.com';
 
 /*
