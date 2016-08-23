@@ -41,9 +41,8 @@ class Main extends MY_Controller {
 	function delete(){
 		$returnURL = $this->input->get('returnURL');
 		$topic_id = $this->input->post('topic_id');
-		//혹시나 모를 로그인이 안되어있을때 메세지 출력하고 현재 사이트로 redirection
+		// 액션 순간 로그인(세션) 체크 메세지 출력하고 현재 사이트로 redirection
 		$this->_require_login($returnURL);
-		$this->load->model('gb_model');
 		$this->gb_model->delete($topic_id);
 
 		// 캐쉬 삭제

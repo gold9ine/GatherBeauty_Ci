@@ -13,6 +13,8 @@ class MY_Controller extends CI_Controller {
 
 		$this->load->driver('cache', array('adapter' => 'apc', 'backup' => 'file'));
 	}
+
+	// 페이지의 헤더 부분
 	function _header(){
 		$this->load->config('nowDev');
 		$this->load->view('common/head');
@@ -26,15 +28,21 @@ class MY_Controller extends CI_Controller {
 		}
 		$this->load->view('topic_list', array('topics'=>$topics));
 	}
+
+	// 페이지의 아래 부분
 	function _footer(){
 		$this->load->view('common/foot');
 	}
+
+	// 액션 순간 로그인(세션) 체크 메세지 출력하고 현재 사이트로 redirection
 	function _require_login($return_url){
 		if(!$this->session->userdata('is_login')){
 			$this->session->set_flashdata('message', '로그인이 필요합니다.');
 			redirect($return_url);
 		}
 	}
+
+	// 유저 세션 세팅
 	function userSessionSet($user){
 		$this->session->set_userdata('is_login', true);
 		$this->session->set_userdata('userId', $user->id);

@@ -64,7 +64,9 @@ session_cache_expire(30);
 				</form>
 				<ul id="" class="nav navbar-nav navbar-right pull-right">
 					<?php	
-					if($this->session->userdata('is_login')){	?>
+					if($this->session->userdata('is_login')){	
+						echo $this->session->userdata('userNm');
+						?>
 						<input type="button" name="logout" value="로그아웃" class="btn btn-default navbar-btn" onclick="location.href='/auth/logout'";>
 						<?php	
 					} else{ ?>
