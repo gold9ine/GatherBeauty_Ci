@@ -32,12 +32,25 @@
 					</fieldset>
 				</div>
 				<div class="modal-footer">
-						<button id="newPwBtn" type="button" class="btn btn-primary pull-left displayNone" onclick="">비번 찾기</button>
-						<button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
-						<button type="submit" class="btn btn-primary">로그인</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
+					<button type="submit" class="btn btn-primary">로그인</button>
+				</div>
+			</form>
+			<form id="resendPwForm" onsubmit="return tempPwNmCheck(this)" name="tempPwForm" class="form-horizontal displayNone" action="" method="post"> <!-- displayNone -->
+				<div class="modal-footer">
+					<div id="loginFormNewPw" class="pull-right">
+						<div class="input-group">
+							<input type="text" id="nicknameCk" class="form-control" placeholder="닉네임을 입력해 주세요." minlength="4" maxlength="10">
+							<span class="input-group-btn">
+								<button id="newPwBtn" class="btn btn-default" type="submit">임시 비밀번호</button>
+							</span>
+						</div><!-- /input-group -->
+						<div class="clear inlineBlock">
+							<p id="login-nick-label" class="help-block"></p>
+						</div>
+					</div>
 				</div>
 			</form>
 		</div><!-- /.modal-content -->
 	</div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
-

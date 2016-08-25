@@ -61,6 +61,7 @@ class Auth extends MY_Controller {
   }
 
   // 회원가입 버튼 눌렀을 때 ajax로 유효성 체크
+  // 임시 비밀번호 버튼 눌렀을 때 email, nickname 체크
   function joinCheck(){
     $request_body = file_get_contents('php://input');
     $info = json_decode(stripcslashes($request_body), true);
@@ -68,11 +69,15 @@ class Auth extends MY_Controller {
     $findNickname = $info['findNickname'];
     $existEmail = 0;
     $existNickname = 0;
+    $oneUserCheck = 0;
     $q_findEmail = $this->user_model->getByEmail(array('searchEmail'=>$findEmail));
     $q_findNickname = $this->user_model->getByNickname(array('searchNickname'=>$findNickname));
     // 이메일 중복 확인
     if($q_findEmail){
       $existEmail = 1;
+      if($q_findEmail->nickname == $findNickname){
+        $oneUserCheck = 1;
+      } 
     }
     // 닉네임 중복 확인
     if($q_findNickname){
@@ -81,6 +86,7 @@ class Auth extends MY_Controller {
     $returnArr = new stdClass();
     $returnArr->existEmail = $existEmail;
     $returnArr->existNickname = $existNickname;
+    $returnArr->oneUserCheck = $oneUserCheck;
     echo json_encode($returnArr);
   }
 
@@ -144,7 +150,7 @@ class Auth extends MY_Controller {
     return $tempPw;
   }
 
-  // 비밀번호 새로 만들기
+  // 임시 비밀번호 보내기
   function sendPw(){
     $findEmail = $this->input->get('userEmail');
     $returnURL = $this->input->get('returnURL');

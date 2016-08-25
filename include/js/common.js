@@ -1,6 +1,7 @@
 $(function(){  
 	$(document).ready(function() {
-		// $('#myModal').modal('show');
+
+
 	});
 });
 
@@ -31,7 +32,7 @@ function loginCheck(formEI){
 				$("div[id^='loginForm']").removeClass('has-error');
 				$("p[id^='login-']").html('');
 				$('#confirmMailBtn').addClass("displayNone");
-				$('#newPwBtn').addClass("displayNone");
+				$('#resendPwForm').addClass("displayNone");
 				if(email.length == 0){
 					$('#loginFormEmail').addClass('has-error');
 					console.log("id empty");
@@ -62,10 +63,11 @@ function loginCheck(formEI){
 					}
 					else if(pw.length != 0 && dataParse.loginCheck!="1"){
 						// 임시 비밀번호 버튼 세팅
-						$('#newPwBtn').attr('onclick', 'location.href=\'/auth/sendPw?userEmail='+encodeURIComponent(loginEmail)+'&returnURL='+encodeURIComponent(document.URL)+'\'');
+						$('#resendPwForm').attr('action', '/auth/sendPw?userEmail='+encodeURIComponent(loginEmail)+'&returnURL='+encodeURIComponent(document.URL));
+						// $('#newPwBtn').attr('onclick', 'location.href=\'/auth/sendPw?userEmail='+encodeURIComponent(loginEmail)+'&returnURL='+encodeURIComponent(document.URL)+'\'');
 						$('#loginFormPw').addClass('has-error');
 						$('#login-password-label').html('비밀번호가 일치하지 않습니다.');
-						$('#newPwBtn').removeClass("displayNone");
+						$('#resendPwForm').removeClass("displayNone");
 						console.log("비밀번호 불일치");
 						return false;
 					}
@@ -141,6 +143,64 @@ function joinCheck(formEI){
 			}, error: function(xhr,status,error){
 				alert(error);
 				console.log("login check ajax false");
+				return false;
+			}
+		}); 
+	});
+	return check;
+}
+
+// 임시 비밀번호 보내기 이메일, 닉네임 ajax 체크
+function tempPwNmCheck(userEmail){
+	var check = false;
+	var email = $('#loginEmail').val();
+	var nickname = $('#nicknameCk').val();
+	var jObj = new Object();
+	jObj.findEmail = email;
+	jObj.findNickname= nickname;
+	var jsonInfo = JSON.stringify(jObj);
+
+	$(document).ready(function(){
+		jQuery.ajax({
+			type:"POST",
+			url:"/auth/joinCheck",
+			contentType : 'application/json; charset=UTF-8',
+			data : jsonInfo,
+			async : false,
+			success:function(data){
+				var dataParse = JSON.parse(data);
+				$("div[id^='loginForm']").removeClass('has-error');
+				$("p[id^='login-']").html('');
+				if(email.length == 0){
+					$('#loginFormEmail').addClass('has-error');
+					console.log('이메일란 empty');
+					check = false;
+				} else if(dataParse.existEmail!="1"){
+					$('#loginFormEmail').addClass('has-error');
+					$('#resendPwForm').addClass('displayNone');
+					$('#login-email-label').html('입력하신 이메일과 일치하는 아이디가 없습니다.');
+					console.log("존재하지 않는 이메일");
+					check = false;
+				}
+				if(nickname.length == 0){
+					$('#loginFormNewPw').addClass('has-error');
+					console.log('닉네임란 empty');
+					check = false;
+				}
+				if(dataParse.oneUserCheck=="1"){
+					console.log('이메일과 닉네임 일치');
+					check = true;
+				}
+				else{
+					$('#loginFormEmail').addClass('has-error');
+					$('#loginFormNewPw').addClass('has-error');
+					$('#login-nick-label').html('이메일과 닉네임이 일치하지 않습니다.');
+					console.log('이메일과 닉네임 블일치');
+					check = false;
+				}
+			}, error: function(xhr,status,error){
+				alert(error);
+				console.log("check ajax false");
 				return false;
 			}
 		}); 

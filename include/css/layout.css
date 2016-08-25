@@ -70,7 +70,7 @@ div{display: block;}
 /* Tablet Device -width 980px below*/
 @media all and (min-width:768px) and (max-width:980px) {
 	/*.siteWidth{width: 760px;}*/
-	#loginForm > .modal-body {
+	#loginForm > .modal-body, #loginFormNewPw {
 		width: 500px;
 		margin: 0 auto;
 	}
@@ -79,7 +79,7 @@ div{display: block;}
 /* Desktop Device -width 1280px exceed*/
 @media all and (min-width:980px) and (max-width:1280px) {
 	.siteWidth{width: 980px;}
-	#loginForm > .modal-body {
+	#loginForm > .modal-body, #loginFormNewPw {
 		width: 500px;
 		margin: 0 auto;
 	}
@@ -88,7 +88,7 @@ div{display: block;}
 /* WideDesktop Device -width 1280 exceed*/
 @media all and (min-width:1280px) {
 	.siteWidth{width: 1280px;}
-	#loginForm > .modal-body {
+	#loginForm > .modal-body, #loginFormNewPw{
 		width: 500px;
 		margin: 0 auto;
 	}
