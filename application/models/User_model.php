@@ -84,7 +84,30 @@ class User_model extends MY_Model{
   function userConfirm($option){
     $data = array('email_check' => '1');
     $this->db->where('id', $option['userId']);
-    $this->db->update('user', $data); 
+    $result = $this->db->update('user', $data);
+    if($result){
+      $user_dir = $option['userId'];
+      $date_dir = substr($option['userCreated'],0,10);
+      if(is_dir($_SERVER["DOCUMENT_ROOT"]."/uploads/".$date_dir)){
+        if(is_dir($_SERVER["DOCUMENT_ROOT"]."/uploads/".$date_dir."/".$user_dir)){
+          echo("<script>console.log('USER 폴더 중복, 폴더를 만들 수 없습니다.');</script>");
+        }else{
+          @mkdir($_SERVER["DOCUMENT_ROOT"]."/uploads/".$date_dir."/".$user_dir, 0777);
+          $file=fopen($_SERVER["DOCUMENT_ROOT"]."/uploads/".$date_dir."/".$user_dir."/index.php","w");
+          fwrite($file,"<!DOCTYPE html><html lang='ko'><head><meta http-equiv='refresh' content='0;url=/'></head></html>");
+          fclose($file);
+        }
+      }else{
+        @mkdir($_SERVER["DOCUMENT_ROOT"]."/uploads/".$date_dir, 0777);
+        $file=fopen($_SERVER["DOCUMENT_ROOT"]."/uploads/".$date_dir."/index.php","w");
+        fwrite($file,"<!DOCTYPE html><html lang='ko'><head><meta http-equiv='refresh' content='0;url=/'></head></html>");
+        fclose($file);
+        @mkdir($_SERVER["DOCUMENT_ROOT"]."/uploads/".$date_dir."/".$user_dir, 0777);
+        $file=fopen($_SERVER["DOCUMENT_ROOT"]."/uploads/".$date_dir."/".$user_dir."/index.php","w");
+        fwrite($file,"<!DOCTYPE html><html lang='ko'><head><meta http-equiv='refresh' content='0;url=/'></head></html>");
+        fclose($file);
+      }
+    }
   }
 
   // 임시 비밀번호 해쉬로 DB 저장
@@ -104,24 +127,24 @@ class User_model extends MY_Model{
     <h4>유저 정보 페이지에서 비밀번호를 수정해 주세요.</h4>
     <br>$newPassword<br>
     <a></a>
-    </div>";
+  </div>";
 
         // 메일전송
-    $this->load->library('email');
+  $this->load->library('email');
         // 전송할 데이터가 html 문서임을 옵션으로 설정
-    $this->email->initialize(array('mailtype'=>'html'));
+  $this->email->initialize(array('mailtype'=>'html'));
 
-    $this->email->clear();
+  $this->email->clear();
         // 송신자의 이메일과 이름 정보
-    $this->email->from($fromMail, '게더뷰티 관리자'); 
+  $this->email->from($fromMail, '게더뷰티 관리자'); 
         // 이메일 제목
-    $this->email->subject('Gather Beauty 임시 비밀번호');
+  $this->email->subject('Gather Beauty 임시 비밀번호');
         // 이메일 본문
-    $this->email->message($message); 
+  $this->email->message($message); 
         // 이메일 수신자.
-    $this->email->to($option['email']);
+  $this->email->to($option['email']);
         // 이메일 발송
-    $this->email->send();
-  }
+  $this->email->send();
+}
 }
 ?>

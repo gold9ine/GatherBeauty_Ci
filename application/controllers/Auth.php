@@ -25,7 +25,6 @@ class Auth extends MY_Controller {
         $emailConfirm = 1;
       }
     }
-
     $returnArr = new stdClass();
     $returnArr->count = $countEmail;
     $returnArr->emailConfirm = $emailConfirm;

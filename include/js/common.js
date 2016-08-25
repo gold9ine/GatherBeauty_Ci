@@ -1,7 +1,22 @@
-$(function(){  
+$(function(){
+	// 페이지 로드했을 시 스크롤업 버튼 없어지기
 	$(document).ready(function() {
+		$('#pageUpBtn').fadeOut();
+	});
 
+	// 스크롤업 버튼 사라지고 보이게 하기
+	$(document).scroll(function() {
+		if($(this).scrollTop() > 200) {
+			$('#pageUpBtn').fadeIn();
+		}else{
+			$('#pageUpBtn').fadeOut();
+		}
+	});
 
+	// 위로 올라가기 버튼 부드럽게
+	$('#pageUpBtn').click(function() {
+		$('html, body').animate({scrollTop : 0}, 400);
+		return false;
 	});
 });
 

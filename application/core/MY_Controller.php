@@ -38,6 +38,7 @@ class MY_Controller extends CI_Controller {
 	// 페이지의 아래 부분
 	function _footer(){
 		$this->load->view('common/foot');
+		$this->load->view('common/messageTopScrolle');
 	}
 
 	// 액션 순간 로그인(세션) 체크 메세지 출력하고 현재 사이트로 redirection
