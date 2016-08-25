@@ -21,8 +21,8 @@ session_cache_expire(30);
 	<meta id="mobileMeta" name="viewport" content="width=device-width">
 
 	<title>테스트 페이지</title>
-	<link rel="shortcut icon" href="/include/img/icon_gb.ico">
-	<link rel="apple-touch-icon" href="/include/img/icon_gb.ico">
+	<link rel="shortcut icon" href="/include/img/icon/webIcon.ico">
+	<link rel="apple-touch-icon" href="/include/img/icon/webIcon.ico">
 
 	<!-- java script -->
 	<script language="Javascript" src="/include/lib/ckeditor/ckeditor.js"></script>
@@ -55,23 +55,62 @@ session_cache_expire(30);
 				<a class="navbar-brand" href="/">GatherBeauty</a>
 			</div>
 			<!-- Collect the nav links, forms, and other content for toggling -->
-			<div class="collapse navbar-collapse" id="navbarFunctionGroup">
+			<div class="collapse navbar-collapse overflowYVisible" id="navbarFunctionGroup">
 				<form class="navbar-form navbar-left form-inline" role="search">
 					<div class="form-group">
 						<input type="text" class="form-control" placeholder="Search">
 					</div>
-						<button id="searchBtn" type="submit" class="btn btn-default">찾기</button>
+					<button id="searchBtn" type="submit" class="btn btn-default">찾기</button>
 				</form>
-				<ul id="" class="nav navbar-nav navbar-right pull-right">
+				<ul class="nav navbar-nav navbar-right pull-right">
 					<?php	
-					if($this->session->userdata('is_login')){	
-						echo $this->session->userdata('userNm');
+					if($this->session->userdata('is_login')){
+						$userName = $this->session->userdata('userNm');
+						$userFlower = $this->session->userdata('userFlower');
+						$getFlower = $this->session->userdata('userGetFlower');
+						$todayFlower = $this->session->userdata('userTodayFlower');
+						$totalGetFlower = $getFlower + $todayFlower;
 						?>
-						<input type="button" name="logout" value="로그아웃" class="btn btn-default navbar-btn" onclick="location.href='/auth/logout'";>
+						<li class="clearfix padding5">
+							<div>
+								<?php 
+								if($totalGetFlower>=1){
+									?>
+									<span class="badge marginTop10"><?= $totalGetFlower ?></span>
+									<?php	
+								}	?>
+								<img class="width20 heightAuto backSizeContain marginTop10" src="/include/img/icon/icon_gb01.png"></img>
+								<a class="pointer dropdown-toggle pull-right" role="button" type="button" data-toggle="dropdown" aria-expanded="false">
+									<h4 class="margin-zero"><?= $userFlower ?> 송이<span class="caret"></span></h4>
+								</a>
+								<ul class="dropdown-menu pull-right absolute ulMenu" role="menu">
+									<li><a class="pointer" onclick="flowerInfo()">꽃 정보</a></li>
+
+									<li name="getflower"><a class="pointer" onclick="getdailyflower()">꽃 받기 <span class="badge"><?= $totalGetFlower ?></span></a></li>
+
+								</ul>
+							</div>
+						</li>
+						<li class="clearfix padding5 marginLeft15">
+							<div>
+								<img class="width20 heightAuto backSizeContain marginTop10" src="/include/img/icon/user-icon.png"></img>
+								<a class="pointer dropdown-toggle pull-right" role="button" type="button" data-toggle="dropdown" aria-expanded="false">
+									<h4 class="margin-zero"><?= $userName ?><span class="caret"></span></h4>
+								</a>
+								<ul class="dropdown-menu pull-right absolute ulMenu" role="menu">
+									<li><a class="pointer" onclick="myInfo()">내 정보</a></li>
+									<li class="divider"></li>
+									<li><a class="pointer" onclick="shopFavorite()">샵 즐겨찾기</a></li>
+									<li><a class="pointer" onclick="diaryScrap()">다이어리 스크랩</a></li>
+									<li class="divider"></li>
+									<li><a class="pointer" onclick="location.href='/auth/logout'">로그아웃</a></li>
+								</ul>
+							</li>
+						</div>
 						<?php	
 					} else{ ?>
-						<input type="button" name="login" value="로그인" class="btn btn-default navbar-btn" data-toggle="modal" data-target="#loginModal">
 						<input type="button" name="join" value="회원가입" class="btn btn-default navbar-btn" onclick="location.href='/auth/register'";>
+						<input type="button" name="login" value="로그인" class="btn btn-default navbar-btn" data-toggle="modal" data-target="#loginModal">
 						<?php	
 					}	?>
 				</ul>

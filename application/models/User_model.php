@@ -115,7 +115,7 @@ class User_model extends MY_Model{
         // 송신자의 이메일과 이름 정보
     $this->email->from($fromMail, '게더뷰티 관리자'); 
         // 이메일 제목
-    $this->email->subject('Gather Beauty 회원가입 이메일 인증');
+    $this->email->subject('Gather Beauty 임시 비밀번호');
         // 이메일 본문
     $this->email->message($message); 
         // 이메일 수신자.

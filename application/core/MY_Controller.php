@@ -17,6 +17,12 @@ class MY_Controller extends CI_Controller {
 	// 페이지의 헤더 부분
 	function _header(){
 		$this->load->config('nowDev');
+		// 유저 한번 더 로드 해서 세션 저장
+		if($this->session->userdata('is_login')){
+			$this->load->model('user_model');
+			$user = $this->user_model->getByEmail(array('searchEmail'=>$this->session->userdata('userEmail')));
+			$this->userSessionSet($user);
+		}
 		$this->load->view('common/head');
 		$this->load->view('common/loginModal');
 	}
@@ -49,6 +55,7 @@ class MY_Controller extends CI_Controller {
 		$this->session->set_userdata('userNm', $user->nickname);
 		$this->session->set_userdata('userEmail', $user->email);
 		$this->session->set_userdata('userFlower', $user->flower);
+		$this->session->set_userdata('userGetFlower', $user->get_flower);
 		$this->session->set_userdata('userTodayFlower', $user->today_flower);
 	}
 }
